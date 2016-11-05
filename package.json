@@ -1,0 +1,22 @@
+{
+  "name": "trek-cors",
+  "version": "0.0.0",
+  "description": "Cross-Origin Resource Sharing(CORS) middleware",
+  "repository": "trekjs/cors",
+  "author": {
+    "name": "Fangdun Cai",
+    "email": "cfddream@gmail.com",
+    "url": "fundon.me"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cors",
+    "trek",
+    "trek-cors",
+    "Cross-Origin Resource Sharing"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=7"
+  }
+}
