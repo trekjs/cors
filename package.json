@@ -1,6 +1,6 @@
 {
   "name": "trek-cors",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Cross-Origin Resource Sharing(CORS) middleware",
   "repository": "trekjs/cors",
   "author": {
@@ -18,5 +18,66 @@
   "main": "index.js",
   "engines": {
     "node": ">=7"
+  },
+  "scripts": {
+    "lint": "xo",
+    "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "nyc": "^8.4.0",
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1",
+    "trek-engine": "^0.5.0",
+    "xo": "^0.17.0"
+  },
+  "ava": {
+    "concurrency": 5,
+    "require": "babel-register"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "es6"
+    ],
+    "semicolon": false,
+    "space": true,
+    "ignores": [],
+    "rules": {
+      "curly": 0,
+      "import/no-dynamic-require": 0,
+      "import/no-named-as-default": 0,
+      "max-lines": 0,
+      "no-warning-comments": [
+        "error",
+        {
+          "terms": [
+            "todo",
+            "fixme"
+          ],
+          "location": "anywhere"
+        }
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always",
+        {
+          "arraysInObjects": true,
+          "objectsInObjects": true
+        }
+      ],
+      "space-before-function-paren": [
+        2,
+        "always"
+      ],
+      "yoda": 0
+    }
   }
 }
