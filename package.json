@@ -24,7 +24,7 @@
     "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava"
   },
   "devDependencies": {
-    "ava": "0.17",
+    "ava": "0.18",
     "nyc": "10",
     "request": "2",
     "request-promise": "4",
