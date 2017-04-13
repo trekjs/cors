@@ -1,6 +1,12 @@
+/*!
+ * trek-cors
+ * Copyright(c) 2017 Fangdun Cai <cfddream@gmail.com> (https://fundon.me)
+ * MIT Licensed
+ */
+
 'use strict'
 
-module.exports = makeCors
+module.exports = corsWithConfig
 
 const defaults = {
   credentials: false,
@@ -20,7 +26,7 @@ const ACCESS_CONTROL_ALLOW_CREDENTIALS = 'Access-Control-Allow-Credentials'
 const ACCESS_CONTROL_REQUEST_METHOD = 'Access-Control-Request-Method'
 const ACCESS_CONTROL_REQUEST_HEADERS = 'Access-Control-Request-Headers'
 
-function makeCors (options = {}) {
+function corsWithConfig (options = {}) {
   options = Object.assign({}, defaults, options)
 
   let { credentials, origins, methods, maxAge, headers, exposeHeaders } = options

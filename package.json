@@ -1,6 +1,6 @@
 {
   "name": "trek-cors",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Cross-Origin Resource Sharing(CORS) middleware",
   "repository": "trekjs/cors",
   "author": {
@@ -21,22 +21,22 @@
   },
   "scripts": {
     "lint": "xo",
-    "test": "xo && nyc node --harmony-async-await ./node_modules/.bin/ava"
+    "test": "xo && nyc ava"
   },
   "devDependencies": {
-    "ava": "0.18",
+    "ava": "0.19",
     "nyc": "10",
     "request": "2",
     "request-promise": "4",
-    "trek-engine": "0.5",
-    "xo": "0.17"
+    "trek-engine": "1",
+    "xo": "0.18"
   },
   "ava": {
-    "concurrency": 5,
-    "require": "babel-register"
+    "concurrency": 5
   },
   "nyc": {
     "reporter": [
+      "html",
       "lcov",
       "text"
     ]

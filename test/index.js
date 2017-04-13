@@ -20,7 +20,7 @@ test('should not set `Access-Control-Allow-Origin` when request Origin header mi
 
   app.use(cors())
 
-  app.use(async ({ res }) => {
+  app.use(({ res }) => {
     res.send(200, { foo: 'bar' })
   })
 
@@ -42,7 +42,7 @@ test('should set `Access-Control-Allow-Origin` to `*` when request Origin is emp
 
   app.use(cors())
 
-  app.use(async ({ res }) => {
+  app.use(({ res }) => {
     res.send(200, { foo: 'bar' })
   })
 
@@ -70,7 +70,7 @@ test('should set `Access-Control-Allow-Origin` to `*` when request Origin is wil
     exposeHeaders: ['content-length']
   }))
 
-  app.use(async ({ res }) => {
+  app.use(({ res }) => {
     res.send(200, { foo: 'bar' })
   })
 
@@ -102,7 +102,7 @@ test('should set 204 when preflight request', async t => {
     methods: ['GET', 'POST']
   }))
 
-  app.use(async ({ res }) => {
+  app.use(({ res }) => {
     res.send(200, { foo: 'bar' })
   })
 
@@ -140,7 +140,7 @@ test('should set 204 when preflight request and add headers option', async t => 
     headers: ['X-PINGOTHER', 'Content-Type']
   }))
 
-  app.use(async ({ res }) => {
+  app.use(({ res }) => {
     res.send(200, { foo: 'bar' })
   })
 
@@ -173,7 +173,7 @@ test('should not set 204 when preflight request and origin is empty', async t =>
     origins: ''
   }))
 
-  app.use(async ({ res }) => {
+  app.use(({ res }) => {
     res.send(200, { foo: 'bar' })
   })
 
